@@ -125,6 +125,11 @@ textarea:not([rows]) {
 
 /* css start */
 
+/* utils */
+.rotate {
+  transform: rotate(90deg);
+}
+
 /* nav */
 ul {
   list-style: none;
