@@ -20,254 +20,339 @@
     />
     <!-- google font -->
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-     <!-- d -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- d -->
   </head>
   <body>
     <div class="noise"></div>
     <!-- nav -->
-    <header id="nav-menu" aria-label="navigation bar">
-      <div class="container">
-        <div class="nav-start">
-          <a class="logo" href="#"> Nico </a>
-          <nav class="menu">
-            <ul class="menu-bar">
-              <li>
-                <a class="nav-link" href="#projects"> Projects </a>
+    <header class="header">
+      <div class="header__container">
+        <nav class="header__nav" aria-label="Main navigation">
+          <a href="#" class="header__logo">Nico</a>
+          <div class="header__menu">
+            <ul class="header__menu-list">
+              <li class="header__menu-item">
+                <a href="#projects" class="header__menu-link">Projects</a>
               </li>
-
-              <li>
-                <a class="nav-link" href="/aboutme.html"> About Me </a>
+              <li class="header__menu-item">
+                <a href="/aboutme.html" class="header__menu-link">About Me</a>
               </li>
-              <li><a class="nav-link" href="#">Contact</a></li>
+              <li class="header__menu-item">
+                <a href="/contactme.html" class="header__menu-link">Contact</a>
+              </li>
             </ul>
-          </nav>
-        </div>
-
-        <div class="nav-end">
-          <div class="right-container">
-            <a href="/resume.html" class="btn btn-primary">Resume</a>
           </div>
-
+          <a href="/resume.html" class="header__cta">Resume</a>
           <button
+            class="header__hamburger"
             id="hamburger"
-            aria-label="hamburger"
-            aria-haspopup="true"
+            aria-label="Menu"
             aria-expanded="false"
           >
             <i class="fa-solid fa-bars" aria-hidden="true"></i>
           </button>
-        </div>
+        </nav>
       </div>
     </header>
-    <!-- end nav -->
-    <main>
+    <main class="l-main">
+      <!-- sidebar -->
       <aside class="sidebar">
-        <div class="sidebar-info">
-          <figure class="avatar-box">
-            <!-- <img src="public/hero-img.png" /> -->
+        <div class="sidebar__info">
+          <figure class="sidebar__avatar">
             <picture>
-              <source media="(min-width: 580px)" srcset="public/Nico-Smiling.webp" />
+              <source
+                media="(min-width: 580px)"
+                srcset="public/Nico-Smiling.webp"
+              />
               <img
+                class="sidebar__avatar-img"
                 src="public/favicon-nico.png"
                 alt="A memoji representing me"
+                loading="lazy"
               />
             </picture>
           </figure>
-          <div class="info-content">
-            <h1 class="name" title="Nico">Nico Dominguez</h1>
-            <p class="title">Front-End Developer</p>
-            <p class="desc">
+          <div class="sidebar__content">
+            <h1 class="sidebar__name" title="Nico">Nico Dominguez</h1>
+            <p class="sidebar__title">Front-End Developer</p>
+            <p class="sidebar__desc">
               Hello! I'm a Front End Web Developer based in Columbia, SC. I hold
               a bachelor's in Advertising from the University of South Carolina
-              but decided to enhance my skill-set through learning web desing. Self-taught and ready for
-              the next challenge, I'm excited to find my next role as a Frontend
-              Web Developer. Cheers!
+              but decided to enhance my skill-set through learning web design.
+              Self-taught and ready for the next challenge, I'm excited to find
+              my next role as a Frontend Web Developer. Cheers!
             </p>
 
-            <div class="contact-info-container">
-              <div class="contact-info">
+            <div class="sidebar__contact-container">
+              <div class="sidebar__contact-item">
                 <a href="https://github.com/Nico-Dominguez" target="_blank">
-                  <img src="public/github.svg" alt="" />
+                  <img
+                    class="sidebar__contact-icon"
+                    src="public/github.svg"
+                    alt="GitHub"
+                  />
                 </a>
               </div>
-
-              <div class="contact-info">
+              <div class="sidebar__contact-item">
                 <a
                   href="https://www.linkedin.com/in/nnicodominguez/"
                   target="_blank"
                 >
-                  <img src="public/linkedin.svg" alt="" />
+                  <img
+                    class="sidebar__contact-icon"
+                    src="public/linkedin.svg"
+                    alt="LinkedIn"
+                  />
                 </a>
               </div>
-
-              <div class="contact-info">
+              <div class="sidebar__contact-item">
                 <a href="https://x.com/webdevnico" target="_blank">
-                  <img src="public/x-twitter.svg" alt="" />
+                  <img
+                    class="sidebar__contact-icon"
+                    src="public/x-twitter.svg"
+                    alt="Twitter"
+                  />
                 </a>
               </div>
             </div>
           </div>
         </div>
       </aside>
-      <article class="About">
-        <!-- section 1 -->
-        <section class="hero-section">
-          <h1>
+
+      <!-- Hero -->
+      <article class="about">
+        <section class="about__hero">
+          <h1 class="about__hero-title">
             Passionate creating great experiences for
-            <span>Digital Product</span>
+            <span class="about__hero-highlight">Digital Product</span>
           </h1>
-          <div class="hero-btn-flex">
+          <div class="about__hero-buttons">
             <a
               href="mailto:98nicodominguez@gmail.com"
               target="_blank"
-              class="hero-btn"
-              style="
-                background-color: var(--background);
-                backdrop-filter: var(--blur);
-                color: var(--bg);
-                border: 1px solid transparent;
-              "
+              class="about__hero-button about__hero-button--primary"
               >Talk with me</a
             >
-            <a href="/index.html#projects" class="hero-btn">See my work</a>
+            <a
+              href="/index.html#projects"
+              class="about__hero-button about__hero-button--secondary"
+              >See my work</a
+            >
           </div>
         </section>
         <!-- section 2 -->
-        <section class="skill-section">
-          <h1 class="skill-title">Skills</h1>
-          <div class="skill-container">
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/html-1.svg" />
-              <h1>HTML</h1>
+        <section class="about__skills">
+          <h1 class="about__skills-title">Skills</h1>
+          <div class="about__skills-container">
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/html-1.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">HTML</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/css-3.svg" />
-              <h1>CSS</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/css-3.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">CSS</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/logo-javascript.svg" />
-              <h1>Javascript</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/logo-javascript.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Javascript</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/git-icon.svg" />
-              <h1>GIT</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/git-icon.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">GIT</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/react-2.svg" />
-              <h1>React</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/react-2.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">React</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/netlify.svg" />
-              <h1>Netlify</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/netlify.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Netlify</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/typescript.svg" />
-              <h1>Typescript</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/typescript.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Typescript</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/vitejs.svg" />
-              <h1>Vite</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/vitejs.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Vite</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/tailwind-css-2.svg" />
-              <h1>Tailwind</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/tailwind-css-2.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Tailwind</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/vue-9.svg" />
-              <h1>Vue.js</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/vue-9.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Vue.js</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/mongodb-icon-2.svg" />
-              <h1>MongoDB</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/mongodb-icon-2.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">MongoDB</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/firebase-1.svg" />
-              <h1>Firebase</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/firebase-1.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Firebase</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/adobe-photoshop-2.svg" />
-              <h1>Photoshop</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img
+                src="public/adobe-photoshop-2.svg"
+                class="about__skill-icon"
+              />
+              <h1 class="about__skill-name">Photoshop</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/adobe-illustrator-cs6.svg" />
-              <h1>Illustrator</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img
+                src="public/adobe-illustrator-cs6.svg"
+                class="about__skill-icon"
+              />
+              <h1 class="about__skill-name">Illustrator</h1>
             </a>
 
-            <a class="skill-item" href="https://www.npr.org/" target="_blank">
-              <img src="public/premiere-pro-cc.svg" />
-              <h1>Premier Pro</h1>
+            <a
+              class="about__skill-item"
+              href="https://www.npr.org/"
+              target="_blank"
+            >
+              <img src="public/premiere-pro-cc.svg" class="about__skill-icon" />
+              <h1 class="about__skill-name">Premier Pro</h1>
             </a>
           </div>
         </section>
         <!-- section 3 -->
 
-        <section class="about-section">
-          <h1>What I Do</h1>
-          <div class="about-list-container">
-            <div class="about-list">
-              <div class="about-img">
-                <p>&#128240</p>
+        <section class="services" id="services">
+          <h2 class="services__title">What I Do</h2>
+          <div class="services__container">
+            <div class="services__item">
+              <div class="services__icon">
+                <p>😍</p>
               </div>
-              <div class="about-desc">
-                <h3>Full page Website design</h3>
-                <p>
-                  Crafting Immersive and engaging full-page website designs that
+              <div class="services__content">
+                <h3 class="services__item-title">Full page Website design</h3>
+                <p class="services__item-description">
+                  Crafting immersive and engaging full-page website designs that
                   captivate audiences and deliver a seamless user experience
                 </p>
               </div>
             </div>
 
-            <div class="about-list">
-              <div class="about-img">
-                <p>&#128525</p>
+            <div class="services__item">
+              <div class="services__icon">
+                <p>😍</p>
               </div>
-              <div class="about-desc">
-                <h3>Company website design</h3>
-                <p>
-                  Transform your online presence with our sleek and modern company website design
+              <div class="services__content">
+                <h3 class="services__item-title">Company website design</h3>
+                <p class="services__item-description">
+                  Transform your online presence with our sleek and modern
+                  company website design
                 </p>
               </div>
             </div>
 
-          <div class="about-list">
-            <div class="about-img">
-              <p>&#128187</p>
-            </div>
-            <div class="about-desc">
-              <h3>Landing page design</h3>
-              <p>
-                Crafting compelling first impressions with our innovative
-                landing page designs. Elevate you online presence effortlessly.
-              </p>
+            <div class="services__item">
+              <div class="services__icon">
+                <p>😍</p>
+              </div>
+              <div class="services__content">
+                <h3 class="services__item-title">Landing page design</h3>
+                <p class="services__item-description">
+                  Crafting compelling first impressions with our innovative
+                  landing page designs. Elevate your online presence
+                  effortlessly.
+                </p>
+              </div>
             </div>
           </div>
         </section>
         <!-- section 4 -->
         <section class="project-section" id="projects">
-          <h1>Projects</h1>
-          <div class="project-container">
-            <a class="project-item" href="#" target="_blank">
-              <div class="image-container">
-                <img src="/public/photoshop.png" alt="" />
+          <h2 class="projects__title">Projects</h2>
+          <div class="projects__container">
+            <a class="projects__item" href="#" target="_blank">
+              <div class="projects__image-wrapper">
+                <img
+                  src="/public/photoshop.png"
+                  alt="Project 1 thumbnail"
+                  class="projects__image"
+                  loading="lazy"
+                />
               </div>
-              <h3>Project 1</h3>
-              <p>
+              <h3 class="projects__item-title">Project 1</h3>
+              <p class="projects__item-description">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Molestiae reprehenderit odio exercitationem voluptatum soluta
                 minus, culpa adipisci? Numquam, sunt enim? Reprehenderit error
@@ -276,12 +361,16 @@
             </a>
 
             <!-- project 2 -->
-            <a class="project-item" href="#" target="_blank">
-              <div class="image-container">
-                <img src="/public/photoshop.png" alt="" />
+            <a class="projects__item" href="#" target="_blank">
+              <div class="projects__image-wrapper">
+                <img
+                  src="/public/photoshop.png"
+                  alt="Project 2 thumbnail"
+                  class="projects__image"
+                />
               </div>
-              <h3>Project 1</h3>
-              <p>
+              <h3 class="projects__item-title">Project 1</h3>
+              <p class="projects__item-description">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Molestiae reprehenderit odio exercitationem voluptatum soluta
                 minus, culpa adipisci? Numquam, sunt enim? Reprehenderit error
@@ -290,12 +379,16 @@
             </a>
 
             <!-- project 3 -->
-            <a class="project-item" href="#" target="_blank">
-              <div class="image-container">
-                <img src="/public/photoshop.png" alt="" />
+            <a class="projects__item" href="#" target="_blank">
+              <div class="projects__image-wrapper">
+                <img
+                  src="/public/photoshop.png"
+                  alt="Project 3 thumbnail"
+                  class="projects__image"
+                />
               </div>
-              <h3>Project 1</h3>
-              <p>
+              <h3 class="projects__item-title">Project 3</h3>
+              <p class="projects__item-description">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Molestiae reprehenderit odio exercitationem voluptatum soluta
                 minus, culpa adipisci? Numquam, sunt enim? Reprehenderit error
@@ -307,9 +400,8 @@
       </article>
     </main>
 
-    <footer>
+    <footer class="footer">
       <p>made with ❤️ by Nico</p>
     </footer>
-
   </body>
 </html>

@@ -1,23 +1,4 @@
-:root {
-  --border: 1px solid #e6e6e6;
-
-  --gray-100: #f5f6fa;
-  --gray-200: #f6f7f8;
-  --gray-500: #718093;
-
-  --woodsmoke-100: #f6f6f6;
-  --woodsmoke-300: #b0b0b0;
-  --woodsmoke-950: #161616;
-
-  --text: hsl(0, 0%, 99%);
-
-  /* box shadow */
-  --box-shadow: 0px 0px 10px 0px rgba(34, 34, 34, 0.8);
-  --background: rgba(0, 0, 0, 0.3);
-  --blur: blur(10px);
-  --outline: 1px solid #483c53;
-}
-/* Box sizing rules */
+/* CSS Reset */
 *,
 *::before,
 *::after {
@@ -26,7 +7,6 @@
   padding: 0;
 }
 
-/* Prevent font size inflation */
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
@@ -34,7 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Remove default margin in favour of better control in authored CSS */
 body,
 h1,
 h2,
@@ -48,29 +27,11 @@ dd {
   margin-block-end: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
 }
 
-/* Set core body defaults */
-body {
-  font-family: "Manrope", sans-serif;
-  color: var(--text);
-  background-color: rgba(51, 51, 51, 0.678);
-  background-image: radial-gradient(
-      at 40% 20%,
-      rgb(84, 66, 95) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 80% 100%, rgb(58, 17, 63) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, rgb(97, 58, 134) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, rgb(26, 51, 28) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgb(109, 46, 104) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, rgb(79, 72, 114) 0px, transparent 50%);
-}
-/* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
 h3,
@@ -81,7 +42,6 @@ label {
   line-height: 1.1;
 }
 
-/* Balance text wrapping on headings */
 h1,
 h2,
 h3,
@@ -89,43 +49,73 @@ h4 {
   text-wrap: balance;
 }
 
-/* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
 }
 
-/* Make images easier to work with */
 img,
 picture {
-  /* max-width: 100%; */
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
 select {
-  font-family: inherit;
-  font-size: inherit;
+  font: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
   min-height: 10em;
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
 }
 
-/* css start */
+/* Root Variables */
+:root {
+  --color-text: hsl(0, 0%, 99%);
+  --color-background: rgba(51, 51, 51, 0.678);
+  --color-accent: rgb(84, 66, 95);
+  --font-primary: "Manrope", sans-serif;
+  --size-container: 1200px;
+  --effect-box-shadow: 0px 0px 10px 0px rgba(34, 34, 34, 0.8);
+  --effect-blur: blur(10px);
+  --effect-outline: 1px solid #483c53;
+  --fs-1: 32px;
+  --fs-2: 24px;
+  --fs-3: 26px;
+  --fs-4: 18px;
+  --fs-6: 15px;
+  --fs-7: 15px;
+  --fs-8: 12px;
+  --outline: 1px solid rgba(255, 255, 255, 0.1);
+  --box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --blur: blur(15px);
+  --apple-500: #2196f3;
+  --background: rgba(255, 255, 255, 0.05);
+}
 
-/* nav */
-ul {
-  list-style: none;
+/* Basic Styling */
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  background-image: radial-gradient(
+      at 40% 20%,
+      rgb(84, 66, 95) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 80% 100%, rgb(58, 17, 63) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgb(97, 58, 134) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgb(26, 51, 28) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgb(109, 46, 104) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgb(79, 72, 114) 0px, transparent 50%);
+
+  line-height: 1.6;
+  font-weight: lighter;
 }
 
 a {
@@ -133,274 +123,277 @@ a {
   color: inherit;
 }
 
-button {
+/* Layout */
+.l-container {
+  max-width: var(--size-container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.l-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.header__container {
+  background-color: #18062b29;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  padding: 1.2rem 3rem;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__logo {
+  margin-right: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-item {
+  margin: 0 0.6rem;
+}
+
+.header__menu-link {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  padding: 0.3rem;
+  min-width: 60px;
+}
+
+.header__menu-link:hover {
+  color: var(--gray-100);
+}
+
+.header__cta {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 25px;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: var(--blur);
+  outline: var(--outline);
+}
+
+.header__hamburger {
+  display: none;
+  padding: 0.1rem;
+  margin-left: 1rem;
+  font-size: 1.9rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
   color: inherit;
 }
 
-.btn {
-  display: block;
-  text-align: center;
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border: var(--border);
-  border-radius: 25px;
-}
-
-.logo {
-  margin-right: 1.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 2rem;
-  height: 90px;
-  padding: 1.2rem 3rem;
-}
-
-.menu-bar .nav-link {
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: -0.6px;
-  padding: 0.3rem;
-  min-width: 60px;
-  margin: 0 0.6rem;
-}
-
-.menu-bar .nav-link:hover {
-  color: var(--gray-100);
-}
-
-.nav-start,
-.nav-end,
-.menu-bar,
-.right-container {
-  display: flex;
-  align-items: center;
-}
-
-.right-container {
-  display: flex;
-  align-items: center;
-  column-gap: 1rem;
-}
-
-#hamburger {
-  display: none;
-  padding: 0.1rem;
-  margin-left: 1rem;
-  font-size: 1.9rem;
-}
-
-body.no-scroll {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
-
-/* navbar media query */
-
-@media (max-width: 1100px) {
-  #hamburger {
-    display: block;
-  }
-
-  .container {
-    padding: 1.2rem;
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    top: 87px;
-    left: 0;
-    min-height: 100vh;
-    width: 100vw;
-    z-index: 5;
-  }
-
-  .menu.show,
-  .dropdown.active {
-    display: block;
-  }
-
-  .dropdown ul {
-    padding-left: 0.3rem;
-  }
-
-  .menu-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    row-gap: 1rem;
-    padding: 1rem;
-    /* glass */
-    background: var(--background);
-    box-shadow: var(--box-shadow);
-    backdrop-filter: var(--blur);
-    outline: var(--outline);
-    height: 100vh;
-  }
-
-  .menu-bar .nav-link {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin: 0;
-  }
-
-  .menu-bar > li:not(:last-child) {
-    padding-bottom: 0.5rem;
-    border-bottom: var(--outline);
-  }
-}
-
-@media (max-width: 600px) {
-  .right-container {
-    display: none;
-  }
-}
-
-.pill {
-  border: var(--border);
-  border-radius: 16px;
-}
-
-/* main container */
+/* Main container */
 main {
   margin: 15px 12px;
   min-width: 259px;
 }
 
-/* resume */
-
-h1 {
-  margin-bottom: 0.8rem;
-}
-
+/* Resume */
 .resume {
   margin-block-start: 2rem;
   display: grid;
   gap: 4rem;
-  padding-block-start: 2rem;
-  padding-block-end: 5rem;
-  padding-inline: 2rem;
-
-  /* glass */
+  padding: 2rem 2rem 5rem;
   background: var(--background);
   box-shadow: var(--box-shadow);
   backdrop-filter: var(--blur);
   outline: var(--outline);
   border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-/* resume intro */
-.resume-intro {
+.resume:hover {
+  transform: translateY(-5px);
+}
+
+.resume > div:not(:last-child) {
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  padding-bottom: 2rem;
+}
+
+.resume__section-title {
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+}
+
+/* Resume intro */
+.resume__intro {
   display: grid;
   gap: 0.7rem;
 }
 
-.resume-intro img {
-  width: 16px;
+.resume__name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.resume-intro a {
+.resume__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume__location {
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  &:hover {
-    text-decoration: underline;
-  }
+  transition: background-color 0.2s ease;
 }
 
-.resume-contact {
+.resume__location:hover {
+  background-color: var(--location-hover-bg, #18062b29);
+  text-decoration: underline;
+}
+
+.resume__location img {
+  width: 16px;
+}
+
+.resume__contact {
   display: flex;
   gap: 0.375rem;
+  flex-wrap: wrap;
 }
 
-.icon {
+.resume__contact-link {
   padding: 0.4rem;
   border: var(--border);
   border-radius: 5px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* resume about */
+.resume__contact-link:hover {
+  background-color: var(--hover-bg-color, #f0f0f0);
+  transform: translateY(-2px);
+}
 
-.resume-about {
+.resume__contact-link img {
+  width: 16px;
+}
+
+.svg {
+  filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(262deg)
+    brightness(106%) contrast(101%);
+}
+
+/* Resume about */
+.resume__about {
   display: grid;
   gap: 0.4rem;
 }
 
-.resume-about p {
+.resume__about-text {
   line-height: 1.5;
 }
 
-/* SKILLS */
-.skills-container {
+/* Skills */
+.resume__skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
+  padding: 0;
+  list-style-type: none;
 }
 
-.skill {
+.resume__skill {
   font-weight: 600;
   font-size: 0.75rem;
   padding: 0.125rem 0.5rem;
   border-radius: 5px;
   user-select: none;
-
   background: var(--background);
   backdrop-filter: var(--blur);
   outline: var(--outline);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* EDUCATION */
+.resume__skill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-.education-title {
+/* Education */
+.resume__education {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.resume__education-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.resume__education-item {
   display: grid;
   gap: 0.5rem;
+  padding: 1.5rem;
+  background-color: var(--education-bg, #18062b29);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
 }
 
-.education-title-flex {
+.resume__education-item:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.resume__education-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.resume-education {
-  display: grid;
-  gap: 0.4rem;
-}
-
-.resume-education-grid {
-  display: grid;
-  gap: 2rem;
-}
-
-.resume-education p {
-  line-height: 1.5;
-}
-
-.resume-education h2 {
+.resume__education-institution {
   font-size: 1rem;
+  font-weight: bold;
 }
 
-.resume-education-border {
+.resume__education-date {
+  font-size: 0.9rem;
+}
+
+.resume__education-description {
+  line-height: 1.5;
   border-bottom: var(--border);
+  padding-bottom: 1rem;
 }
 
 /* footer */
-footer {
+.footer {
   margin-top: 4rem;
   font-size: 0.7rem;
   letter-spacing: 2px;
@@ -408,16 +401,147 @@ footer {
   place-items: center;
 }
 
-/* media=query */
-@media (min-width: 1024px) {
+/* Responsive design */
+@media screen and (min-width: 768px) {
+  main {
+    margin: 30px auto;
+    max-width: 800px;
+  }
+
   .resume {
-    max-width: 950px;
-    margin-inline: auto;
+    gap: 5rem;
+    padding: 3rem 3rem 6rem;
+  }
+
+  .resume > div:not(:last-child) {
+    padding-bottom: 3rem;
+  }
+
+  .resume__section-title {
+    font-size: 1.8rem;
+  }
+
+  .resume__name {
+    font-size: 2.5rem;
+  }
+
+  .resume__title {
+    font-size: 1.4rem;
+  }
+
+  .resume__skills-list {
+    gap: 0.5rem;
+  }
+
+  .resume__skill {
+    font-size: 0.9rem;
+  }
+
+  .resume__education-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 }
 
-@media (min-width: 515px) {
+@media screen and (min-width: 1024px) {
   main {
+    max-width: 1000px;
+  }
+
+  .resume {
+    gap: 6rem;
+    padding: 4rem 4rem 7rem;
+  }
+
+  .resume__section-title {
+    font-size: 2rem;
+  }
+
+  .resume__name {
+    font-size: 3rem;
+  }
+
+  .resume__title {
+    font-size: 1.6rem;
+  }
+
+  .resume__about-text {
+    font-size: 1.1rem;
+  }
+
+  .resume__skill {
+    font-size: 1rem;
+  }
+
+  .resume__education-institution {
+    font-size: 1.2rem;
+  }
+
+  .resume__education-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* media=query */
+@media (max-width: 1100px) {
+  .header__container {
+    padding: 1.2rem;
+  }
+
+  .header__menu {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-image: radial-gradient(
+        at 40% 20%,
+        rgb(84, 66, 95) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 80% 100%, rgb(58, 17, 63) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgb(97, 58, 134) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgb(26, 51, 28) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgb(109, 46, 104) 0px, transparent 50%),
+      radial-gradient(at 0% 0%, rgb(79, 72, 114) 0px, transparent 50%);
+    backdrop-filter: var(--blur);
+  }
+
+  .header__menu.show {
+    display: block;
+  }
+
+  .header__menu-list {
+    flex-direction: column;
+    align-items: stretch;
     padding: 1rem;
+    background: var(--background);
+    outline: var(--outline);
+  }
+
+  .header__menu-item {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  .header__menu-item:not(:last-child) {
+    border-bottom: var(--outline);
+  }
+
+  .header__menu-link {
+    display: block;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .header__hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__cta {
+    display: none;
   }
 }
